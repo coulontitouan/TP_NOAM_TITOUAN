@@ -68,7 +68,7 @@ def create_question(quiz_id):
     return jsonify({'question created': question}), 201
 
 
-@app.route('/quiz/api/v1.0/quiz/<int:quiz_id>/questions/<int:question_id>', methods = ['PUT'])
+@app.route('/quiz/api/v1.0/quiz/<int:quiz_id>/questions/<int:question_id>', methods = ['PUT', 'PATCH'])
 def update_question(quiz_id, question_id):
     if not request.json:
         abort(400)
