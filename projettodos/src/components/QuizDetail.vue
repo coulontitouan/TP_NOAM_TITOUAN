@@ -8,7 +8,6 @@
       <ul>
         <li v-for="question in selectedQuiz.questions" :key="question.id">
           {{ question.title }}
-          {{ question.choices.length }} choix
           <button @click="deleteQuestion(question)">Supprimer la question</button>
           <button @click="editQuestionName(question)">Modifier le Nom de la Question</button>
         </li>
@@ -92,7 +91,7 @@ export default {
     editQuestionName(question) {
   const newQuestionTitle = prompt("Entrez le nouveau titre de la question:", question.title);
   if (newQuestionTitle !== null) {
-    fetch(`${question.url}`, {
+    fetch(`http://127.0.0.1:5000/quiz/api/v1.0/quiz/${this.selectedQuiz.id}/questions/${question.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
