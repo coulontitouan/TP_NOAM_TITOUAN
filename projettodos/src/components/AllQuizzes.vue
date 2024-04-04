@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     viewQuizDetail(quiz) {
-      this.$emit('viewQuizDetail', quiz); // Émet un événement vers le composant parent pour afficher les détails du quiz sélectionné
+      this.$emit('viewQuizDetail', quiz); 
     }
   }
 };
