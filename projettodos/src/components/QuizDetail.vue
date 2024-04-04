@@ -8,6 +8,7 @@
       <ul>
         <li v-for="question in selectedQuiz.questions" :key="question.id">
           {{ question.title }}
+          {{ question.choices.length }} choix
           <button @click="deleteQuestion(question)">Supprimer la question</button>
           <button @click="editQuestionName(question)">Modifier le Nom de la Question</button>
         </li>

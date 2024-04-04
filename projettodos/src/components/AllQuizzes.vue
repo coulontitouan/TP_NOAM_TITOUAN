@@ -5,6 +5,7 @@
     <ul>
       <li v-for="quiz in quizzes" :key="quiz.id">
         {{ quiz.name }}
+        {{ quiz.questions.length }} questions
         <button @click="viewQuizDetail(quiz)">Voir détails</button>
       </li>
     </ul>
