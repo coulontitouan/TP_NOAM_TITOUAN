@@ -44,3 +44,15 @@
         }
     };
 </script>
+
+
+    },
+    props: {
+      quizId: {
+        type: Number,
+        required: true
+      }
+    }
+  };
+  </script>
+
