@@ -210,46 +210,7 @@
         mounted() {
             this.getQuizName();
         }
-      }
-    },
-    cancelAddQuestion() {
-      this.showNewQuestionForm = false;
-    },
-    createdQuestion() {
-      this.showNewQuestionForm = false;
-      this.$emit('questionCreatedToApp', this.selectedQuiz.url);
-    },
-    editQuestionName(question) {
-  const newQuestionTitle = prompt("Entrez le nouveau titre de la question:", question.title);
-  if (newQuestionTitle !== null) {
-    fetch(`http://127.0.0.1:5000/quiz/api/v1.0/quiz/${this.selectedQuiz.id}/questions/${question.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ title: newQuestionTitle })
-    })
-    .then(response => {
-      if (response.ok) {
-        question.title = newQuestionTitle;
-      } else {
-        console.error('Failed to update question name');
-      }
-    })
-    .catch(error => {
-      console.error('Error updating question name:', error);
-    });
-  }
-}
-
-  },
-  components: {
-    NewQuestionForm
-  },
-  mounted() {
-    this.getQuizName();
-  }
-};
+    };
 </script>
 
 
